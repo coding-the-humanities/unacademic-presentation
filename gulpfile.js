@@ -3,8 +3,8 @@ var $ = require('gulp-load-plugins')();
 var del = require('del');
 var runSync = require('run-sequence');
 
-gulp.task('clean', function() {
-    return del('dist');
+gulp.task('clean', function(cb) {
+    return del('dist', cb);
 });
 
 gulp.task('scripts', function () {
