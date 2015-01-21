@@ -1,4 +1,11 @@
-console.log('hi');
+var context = {'header': 'Templating', 'details': 'yaay! Handlebarss'};
+var source   = document.querySelector('#scropt').innerHTML;
+var template = Handlebars.compile(source);
+var html    = template(context);
 
-var something = document.querySelector('p');
-something.innerHTML = 'Other text';
+console.log(context);
+console.log(source);
+console.log(template);
+console.log(html);
+
+document.querySelector('#partialTest').innerHTML = html;

@@ -8,10 +8,16 @@ gulp.task('clean', function(cb) {
 });
 
 gulp.task('scripts', function () {
-    return gulp.src(['src/scripts/**/*.js'])
+    return gulp.src(['src/scripts/**/*.js', '!src/scripts/vendor/**/*'])
         .pipe($.jshint())
         .pipe($.jshint.reporter('jshint-stylish'))
         .pipe(gulp.dest('dist/scripts'))
+        .pipe($.connect.reload());
+});
+
+gulp.task('vendor', function () {
+    return gulp.src(['src/scripts/vendor/**/*'])
+        .pipe(gulp.dest('dist/scripts/vendor'))
         .pipe($.connect.reload());
 });
 
@@ -43,7 +49,7 @@ gulp.task('fonts', function() {
 });
 
 gulp.task('build', ['clean'], function(cb){
-    runSync(['scripts', 'styles', 'html', 'images', 'fonts'], cb)
+    runSync(['scripts', 'vendor', 'styles', 'html', 'images', 'fonts'], cb)
 });
 
 gulp.task('serve', ['build'], function(){
