@@ -31,9 +31,7 @@ gulp.task('fonts', function() {
 		.pipe(gulp.dest('dist/fonts'));
 });
 
-gulp.task('build', ['scripts', 'styles', 'html', 'images', 'fonts'], function() {  
-
-});
+gulp.task('build', ['scripts', 'styles', 'html', 'images', 'fonts'], function(){});
 
 gulp.task('serve', ['build'], function(){ 
     gulp.watch(['src/**/*.html'], ['html']);
@@ -46,8 +44,10 @@ gulp.task('default', ['serve'], function() {
 	
 });
 
-gulp.task('deploy', ['default'], function () {
-  return gulp.src('./dist/**/*')
-    .pipe($.deploy());
+gulp.task('deploy', function () {
+    console.log($);
+
+    return gulp.src('./dist/**/*')
+        .pipe($.gh-pages());
 });
 
