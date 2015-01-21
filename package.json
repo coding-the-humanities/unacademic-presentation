@@ -1,0 +1,23 @@
+{
+  "name": "unacademic_cards",
+  "version": "0.0.0",
+  "description": "The cards for the unacademic-ui, perhaps with sidebar",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "E van Zummeren, R Chavers, RJ Korteschiel",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^1.9.1",
+    "del": "^1.1.1",
+    "gulp": "^3.8.10",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-jshint": "^1.9.0",
+    "gulp-load-plugins": "^0.8.0",
+    "gulp-sass": "^1.3.2",
+    "jshint-stylish": "^1.0.0",
+    "node-bourbon": "^1.2.3",
+    "node-neat": "^1.4.2"
+  }
+}
