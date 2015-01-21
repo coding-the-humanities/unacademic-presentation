@@ -1,16 +1,22 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
+var del = require('del');
+var runSync = require('run-sequence');
+
+gulp.task('clean', function() {
+    return del('dist');
+});
 
 gulp.task('scripts', function () {
-    gulp.src(['src/scripts/**/*.js'])
+    return gulp.src(['src/scripts/**/*.js'])
         .pipe($.jshint())
         .pipe($.jshint.reporter('jshint-stylish'))
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('dist/scripts'))
         .pipe($.connect.reload());
 });
 
 gulp.task('styles', function () {
-    gulp.src('src/styles/**/*.scss')
+    return gulp.src('src/styles/**/*.scss')
         .pipe($.sass({
         	includePaths: require('node-neat').includePaths
         }))
@@ -19,27 +25,28 @@ gulp.task('styles', function () {
 });
 
 gulp.task('html', function() {  
-	gulp.src(['src/**/*.html'])
+	return gulp.src(['src/**/*.html'])
 		.pipe(gulp.dest('dist'))
         .pipe($.connect.reload());
 });
 
 gulp.task('images', function() {  
-	gulp.src(['src/images/**'])
+	return gulp.src(['src/images/**'])
 		.pipe(gulp.dest('dist/images'))
         .pipe($.connect.reload());
 });
 
 gulp.task('fonts', function() {  
-	gulp.src(['src/fonts/**'])
+	return gulp.src(['src/fonts/**'])
 		.pipe(gulp.dest('dist/fonts'))
         .pipe($.connect.reload());
 });
 
-gulp.task('build', ['scripts', 'styles', 'html', 'images', 'fonts'], function(){});
+gulp.task('build', ['clean'], function(cb){
+    runSync(['scripts', 'styles', 'html', 'images', 'fonts'], cb)
+});
 
 gulp.task('serve', ['build'], function(){
-    
     $.connect.server({
         root: 'dist',
         livereload: true

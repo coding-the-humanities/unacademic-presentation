@@ -1,23 +1,13 @@
+// Includes
+
 @import "normalize";
 @import "bourbon";
 @import "neat";
 @import "bitters/base";
 
-// Delete this test-trash when you see it!
-.hello {
-	background: black;
-	.bye {
-		background: red;
-		.bourbon {
-			 @include ellipsis(50%);
-			 color: red;
-		}
-		.neat {
-			@include span-columns(3);
-		}
-	}
-}
+// Write your styles below - They should have access to any and all
+// of the bourbon/neat/bitter stuffs. You can edit bitter directly too;
+// it's only a styling scaffold.
 
-p {
-	background: red;
-}
+
+
