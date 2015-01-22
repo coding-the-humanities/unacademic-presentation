@@ -10,59 +10,64 @@
 	<!-- There is one and only one stylesheet, the rest should be includes with
 	sass the include system. -->
 	<link rel="stylesheet" href="main.css">
+
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+  <script type="text/javascript" src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v2.0.0.js"></script>
+
+
+    <!-- this is the handlebars template definition - in index.html for readibility purposes-->
+    <script id="card-template-src" type="text/x-handlebars-template">
+
+        <div class="heading">
+            <h1 class="card-category">{{category}}</h1>
+            <div class="image">    
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/HermannGrid.gif" alt="background" class="bg">
+            </div>            
+        </div>
+
+        <div class="card-title expander"> 
+            <h2>{{title}}</h2>
+        </div>
+
+        <div class="desc expandable">
+            <div class="card-description"> 
+                <p>{{description}}</p> 
+            </div>
+            <div class="card-tags"> 
+                <p>Tags: humanities, coding, web</p> 
+            </div>
+            <div class-"card-curator">Curator: Norbert Wiener</div>
+        </div>
+
+
+        <div class="summary">
+            <ul>
+                <li>
+                    <div class="learners"> {{ learners }}</div>
+                </li>
+                <li>
+                    <div class="rating">{{ rating }}</div>
+                </li>
+               
+            </ul>
+        </div>
+
+        <div class="card-btn">
+            <button name-"browse">browse</button>
+            <button name="learn">learn</button>
+            <button name="curate">curate</button>
+        </div>        
+
+    </script>
 </head>
 <body>
 	
 	<aside></aside>
 
-        <div class="card">
-           
-            <div class="heading">
-             
-                <h1 class="card-category"> {{ card.category }} </h1>
-                 
-                <div class="image">    
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/HermannGrid.gif" alt="background" class="bg">
-                </div>
+    <div id="ffframe"></div>
 
-                <div class="desc">
-                    <div class="card-description"> 
-                        <p>{{ card.description }}</p> 
-                    </div>
-                    <div class="card-tags"> 
-                        <p>{{ card.tags }}</p> 
-                    </div>
-                    <div class-"card-curator">{{ card.curator }}</div>
-                </div>
-
-            </div>
-
-            <div class="card-title"> 
-                    <h2>{{ card.title }}</h2> 
-            </div>
-
-            <div class="summary">
-            	<ul>
-            		<li>
-            			<div class="learners"> {{ learners }}</div>
-	                </li>
-	                <li>
-	                	<div class="rating">{{ rating }}</div>
-	                </li>
-	               
-	            </ul>
-            </div>
-
-            <div class="card-btn">
-                <button name-"browse">browse</button>
-                <button name="learn">learn</button>
-                <button name="curate">curate</button>
-               <!--  <img src"" class="card-path"></img> -->
-            </div>
-        </div>
-	
-
-	<script src="scripts/vendor/handlebars.min.js"></script>
-	<script id="scropt" src="scripts/main.js"></script>
+    <script src="scripts/template-handlers.js"></script>
+	<script src="scripts/main.js"></script>
 </body>
 </html>

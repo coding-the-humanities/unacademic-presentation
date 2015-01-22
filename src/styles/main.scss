@@ -6,6 +6,19 @@
 @import "bitters/base";
 
 
+//*> the following code was written by gauthiier
+
+// this is the frame so that the cards are laid out on the horizontal axis
+#ffframe{
+  width: auto;
+  height: auto;
+  margin: 0;
+	overflow-x: scroll;
+	overflow-y: scroll;
+	white-space: nowrap;  
+}
+//---------
+
 @font-face {
  font-family: 'NN';
  font-style: normal;
@@ -37,11 +50,14 @@ body{
 } 
 
 .card{
-	display: block;
+	float: middle;
+	display: inline-block;
+	vertical-align: top;
+	white-space: normal;
+
 	background: $secondary-color;
 	color:black;
 	width: 300px;
-	height: 600px;
 	margin:20px;
 	text-align: center;
 }
@@ -72,22 +88,14 @@ h1{
 }
 
 .desc{
-	opacity:0;
-	width: 0;
-	height: 0;
-}
-
-&:hover {
-    .card-title {
-        .desc {
-          transition: opacity 0.8s ease;
-          opacity: 1;
-          height: auto;
-          color:black;
-        }
-      
-    }
-  
+	width: 80%;
+	display: block;
+	font-family: NN;
+	font-size: 0.7rem;
+	color: black;
+	white-space: normal;
+	text-align:left;
+	margin-left: 27px;
 }
 
 
