@@ -23,16 +23,18 @@
  @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
 // global colors
-$primary-color: black ;
-$secondary-color: white;
-$tertiary-color: #E0645C;
+$primary-color: 	black;
+$secondary-color: 	white;
+$tertiary-color: 	#E0645C;
+$heading-font:		NB;
+$rest-font:			NN;
 
 
-// rest
+
 html { height: 100%; width:100%; }
 body{
 	background: $primary-color;
-	font-family: NN;
+	font-family: $rest-font;
 	color: $secondary-color;
 } 
 
@@ -41,14 +43,14 @@ body{
 	background: $secondary-color;
 	color:black;
 	width: 300px;
-	height: 600px;
+	height: 610px;
 	margin:20px;
 	text-align: center;
 }
 
 
 h1{
-	font-family: NB;
+	font-family: $heading-font;
 	display: inline-block;
 	background-color: black;
 	color:white;
@@ -63,35 +65,37 @@ h1{
 
 .card-title {
 	@extend h1;
+	margin:5px;
 	display: block;
 	text-align:left;
-	font-family: NN;
 	font-size: 0.8rem;
-	width: 80%;	
+	width: 85%;	
 	margin-left: 23px;
+	h2{
+		font-family: $heading-font;
+	}	
 }
 
-.desc{
-	opacity:0;
-	width: 0;
-	height: 0;
+.card-title .desc {
+	display: none;
+	background: $secondary-color;
+	color: $primary-color;
 }
 
-&:hover {
-    .card-title {
-        .desc {
-          transition: opacity 0.8s ease;
-          opacity: 1;
-          height: auto;
-          color:black;
-        }
-      
-    }
-  
+.card-title:hover .desc {
+	display: block;
 }
 
+.heading .card-tags{
+	display:none;
+}
+
+.heading:hover .card-tags {
+	display: block;
+}
 
 .summary{
+	display: inline-block;
 	li{
 		display: inline-block;
 		float:left;
@@ -104,8 +108,9 @@ h1{
 	}
 }
 
+
 .card-btn{
-	margin-top: 80px;
+	margin-top: 70px;
 }
 
 

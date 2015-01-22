@@ -18,28 +18,26 @@
         <div class="card">
            
             <div class="heading">
-             
-                <h1 class="card-category"> {{ card.category }} </h1>
-                 
+                <h1 class="card-category"> {{ card.category }} </h1> 
+                 	<div class="card-tags"> 
+		                <p>{{ card.tags }}</p> 
+		            </div>
                 <div class="image">    
                     <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/HermannGrid.gif" alt="background" class="bg">
-                </div>
-
-                <div class="desc">
-                    <div class="card-description"> 
-                        <p>{{ card.description }}</p> 
-                    </div>
-                    <div class="card-tags"> 
-                        <p>{{ card.tags }}</p> 
-                    </div>
-                    <div class-"card-curator">{{ card.curator }}</div>
-                </div>
-
+                </div>  
             </div>
+            
 
             <div class="card-title"> 
                     <h2>{{ card.title }}</h2> 
+	                    <div class="desc">
+	                    	<div class="card-description"> 
+	                       	 	<p>{{ card.description }}</p> 
+	                    	</div>
+	                    	<div class-"card-curator">{{ card.curator }}</div>
+	            		</div>
             </div>
+
 
             <div class="summary">
             	<ul>
@@ -57,7 +55,6 @@
                 <button name-"browse">browse</button>
                 <button name="learn">learn</button>
                 <button name="curate">curate</button>
-               <!--  <img src"" class="card-path"></img> -->
             </div>
         </div>
 	
