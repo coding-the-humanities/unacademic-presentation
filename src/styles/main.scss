@@ -5,9 +5,127 @@
 @import "neat";
 @import "bitters/base";
 
-// Write your styles below - They should have access to any and all
-// of the bourbon/neat/bitter stuffs. You can edit bitter directly too;
-// it's only a styling scaffold.
+
+@font-face {
+ font-family: 'NN';
+ font-style: normal;
+ font-weight: 900;
+ src: url('fonts/NN.woff')  format('woff');
+ }
+
+ @font-face{
+  font-family: 'NB';
+  font-style: bold;
+  font-weight: 900;
+  src: url('fonts/NB.woff') format('woff');
+ }
+ 
+ @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+// global colors
+$primary-color: black ;
+$secondary-color: white;
+$tertiary-color: #E0645C;
 
 
+// rest
+html { height: 100%; width:100%; }
+body{
+	background: $primary-color;
+	font-family: NN;
+	color: $secondary-color;
+} 
 
+.card{
+	display: block;
+	background: $secondary-color;
+	color:black;
+	width: 300px;
+	height: 600px;
+	margin:20px;
+	text-align: center;
+}
+
+
+h1{
+	font-family: NB;
+	display: inline-block;
+	background-color: black;
+	color:white;
+	font-size: 1.4rem;
+	margin:10px;
+}
+
+.image img{
+	width:100%;
+	height: 200px;
+}
+
+.card-title {
+	@extend h1;
+	display: block;
+	text-align:left;
+	font-family: NN;
+	font-size: 0.8rem;
+	width: 80%;	
+	margin-left: 23px;
+}
+
+.desc{
+	opacity:0;
+	width: 0;
+	height: 0;
+}
+
+&:hover {
+    .card-title {
+        .desc {
+          transition: opacity 0.8s ease;
+          opacity: 1;
+          height: auto;
+          color:black;
+        }
+      
+    }
+  
+}
+
+
+.summary{
+	li{
+		display: inline-block;
+		float:left;
+		background: black;
+		color: $secondary-color;
+		margin:5px;
+		margin-left: 23px;
+		text-align:left;
+		font-size: 20px;
+	}
+}
+
+.card-btn{
+	margin-top: 80px;
+}
+
+
+.card-btn {
+	button{
+		font-family: NB;
+		display:block;
+	    padding: 0;
+	    margin: 5px;
+	    color: white;
+	    background-color: $tertiary-color;
+	    box-shadow: none;
+	    border: 0 none;
+	    border-radius: 0 ;	
+	    width: 90%; 
+	    height: 2em;
+	    margin-top: 6px;
+	    transition: all 0.1s ease 0s;
+	  	-moz-transition: all 0.1s ease 0s;
+	  	-webkit-transition: all 0.1s ease 0s;
+	  	margin-left:10px;
+  	}
+  }	

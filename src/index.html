@@ -3,6 +3,9 @@
 <head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <link rel="favicon.ico" href="">
 	<title>Unacademic</title>
 	<!-- There is one and only one stylesheet, the rest should be includes with
 	sass the include system. -->
@@ -10,8 +13,54 @@
 </head>
 <body>
 	
-	<!-- Write you HTML here -->
-	<h1>Hello There!</h1>
+	<aside></aside>
+
+        <div class="card">
+           
+            <div class="heading">
+             
+                <h1 class="card-category"> {{ card.category }} </h1>
+                 
+                <div class="image">    
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/HermannGrid.gif" alt="background" class="bg">
+                </div>
+
+                <div class="desc">
+                    <div class="card-description"> 
+                        <p>{{ card.description }}</p> 
+                    </div>
+                    <div class="card-tags"> 
+                        <p>{{ card.tags }}</p> 
+                    </div>
+                    <div class-"card-curator">{{ card.curator }}</div>
+                </div>
+
+            </div>
+
+            <div class="card-title"> 
+                    <h2>{{ card.title }}</h2> 
+            </div>
+
+            <div class="summary">
+            	<ul>
+            		<li>
+            			<div class="learners"> {{ learners }}</div>
+	                </li>
+	                <li>
+	                	<div class="rating">{{ rating }}</div>
+	                </li>
+	               
+	            </ul>
+            </div>
+
+            <div class="card-btn">
+                <button name-"browse">browse</button>
+                <button name="learn">learn</button>
+                <button name="curate">curate</button>
+               <!--  <img src"" class="card-path"></img> -->
+            </div>
+        </div>
+	
 
 	<script src="scripts/vendor/handlebars.min.js"></script>
 	<script id="scropt" src="scripts/main.js"></script>
