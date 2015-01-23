@@ -5,7 +5,17 @@
 @import "neat";
 @import "bitters/base";
 
+// this is the frame so that the cards are laid out on the horizontal axis
+#ffframe{
+  width: auto;
+  height: auto;
+  margin: 0;
+	overflow-x: scroll;
+	overflow-y: scroll;
+	white-space: nowrap;  
+}
 
+// Nitty Font
 @font-face {
  font-family: 'NN';
  font-style: normal;
@@ -22,115 +32,127 @@
  
  @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
-// global colors
+// global variables
 $primary-color: 	black;
 $secondary-color: 	white;
-$tertiary-color: 	#E0645C;
+$tertiary-color: 	#E74930;
 $heading-font:		NB;
 $rest-font:			NN;
 
 
 
 html { height: 100%; width:100%; }
-body{
-	background: $primary-color;
-	font-family: $rest-font;
-	color: $secondary-color;
+body{	
+	background: 	$primary-color;
+	font-family: 	$rest-font;
+	color: 			$secondary-color;
+
 } 
 
+
+// card style
 .card{
-	display: block;
-	background: $secondary-color;
-	color:black;
-	width: 300px;
-	height: 610px;
-	margin:20px;
-	text-align: center;
+	
+	display: 		inline-block;
+	vertical-align: top;
+	white-space: 	normal;
+	background: 	$secondary-color;
+	color:			black;
+	width: 			400px;
+	height: 		auto;
+	margin:			20px;
+	text-align: 	center;
 }
 
 
 h1{
-	font-family: $heading-font;
-	display: inline-block;
+	font-family: 	$heading-font;
+	display: 		inline-block;
 	background-color: black;
-	color:white;
-	font-size: 1.4rem;
-	margin:10px;
+	color:			white;
+	font-size: 		1.8 rem;
+	margin:			10px;
+	padding:		5px;
 }
 
 .image img{
-	width:100%;
+	width:	100%;
 	height: 200px;
 }
 
 .card-title {
-	@extend h1;
-	margin:5px;
-	display: block;
-	text-align:left;
-	font-size: 0.8rem;
-	width: 85%;	
-	margin-left: 23px;
+	@extend 	h1;
+	margin:		5px;
+	display: 	block;
+	text-align:	left;
+	width: 		85%;	
+	margin-left:23px;
+	font-size: 	1em !important;
 	h2{
-		font-family: $heading-font;
+		text-transform:	lowercase;	
+		font-family: $heading-font;	
+		word-wrap:	break-word;
 	}	
 }
 
-.card-title .desc {
-	display: none;
-	background: $secondary-color;
-	color: $primary-color;
-}
 
-.card-title:hover .desc {
-	display: block;
-}
-
-.heading .card-tags{
-	display:none;
-}
-
-.heading:hover .card-tags {
-	display: block;
-}
 
 .summary{
-	display: inline-block;
-	li{
-		display: inline-block;
-		float:left;
-		background: black;
-		color: $secondary-color;
-		margin:5px;
-		margin-left: 23px;
-		text-align:left;
-		font-size: 20px;
+	li{	
+		padding-left: 	5px;
+		background: 	black;
+		color: 			#72C7B3;
+		margin-left:	23px;
+		text-align:		left;
+		font-size: 		20px;
 	}
 }
 
 
-.card-btn{
-	margin-top: 70px;
-}
-
 
 .card-btn {
+	margin-top: 40px;
 	button{
-		font-family: NB;
-		display:block;
-	    padding: 0;
-	    margin: 5px;
-	    color: white;
+		font-family: 	NB;
+		display:		block;
+	    padding: 		0;
+	    margin: 		5px;
+	    color: 			white;
 	    background-color: $tertiary-color;
-	    box-shadow: none;
-	    border: 0 none;
-	    border-radius: 0 ;	
-	    width: 90%; 
-	    height: 2em;
-	    margin-top: 6px;
-	    transition: all 0.1s ease 0s;
+	    box-shadow: 	none;
+	    border: 		0 none;
+	    border-radius: 	0 ;	
+	    width: 			90%; 
+	    height: 		2em;
+	    margin-top:		6px;
+	    margin-left:	10px;
+	    transition: 	all 0.1s ease 0s;
 	  	-moz-transition: all 0.1s ease 0s;
 	  	-webkit-transition: all 0.1s ease 0s;
-	  	margin-left:10px;
+	  	
   	}
   }	
+
+
+
+.desc{
+	text-align:			left;
+	padding-left:23px;
+	h3{
+		font-family:	$heading-font;
+	}
+	.card-description{
+		font-family:	$rest-font;
+		
+	}
+	.card-curator{
+	color: 				#72C7B3;
+	text-align:			right;
+	padding-right:		23px;
+	}
+		
+}
+
+.short{
+	@extend .desc
+}
