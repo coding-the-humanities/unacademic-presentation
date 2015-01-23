@@ -46,6 +46,7 @@ body{
 	background: 	$primary-color;
 	font-family: 	$rest-font;
 	color: 			$secondary-color;
+	overflow-x:		hidden;
 
 } 
 
@@ -98,10 +99,11 @@ h1{
 
 
 .summary{
+	color: 			#72C7B3;
 	li{	
 		padding-left: 	5px;
 		background: 	black;
-		color: 			#72C7B3;
+		
 		margin-left:	23px;
 		text-align:		left;
 		font-size: 		20px;
