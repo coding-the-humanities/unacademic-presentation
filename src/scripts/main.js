@@ -21,22 +21,33 @@ query.on("value", function(snap) {
     var val = snap.val();
     var frame = document.getElementById('ffframe');
 
-    // iterate through the waypoints
-    for(var i = 0; i < val.length; i++) { 
 
-      var waypoint = val[i];           
-      console.log(waypoint);
+   // iterate through the waypoints
+  var j = 0;
 
-      waypoint.category = waypoint.keywords[0].slice(4); ///hack
+  for(var i = 0; i < val.length; i++) {
 
-      // create a new div
-      var d = document.createElement('div');
-      d.setAttribute('class', 'card');  
+    var waypoint = val[i];           
+    console.log(waypoint);
 
-      // ** magic - handlerbars.js
-      d.innerHTML = card_template(waypoint);
-      frame.appendChild(d);          
+    if(j < 4){
+      j++;
     }
-    makeActionable();
-});
+    else {
+      j = 1;
+    }
+
+    waypoint.cardimage = "../images/Constellations_" + j + ".png";
+    waypoint.category = waypoint.keywords[0].slice(4); ///hack
+
+    // create a new div
+    var d = document.createElement('div');
+    d.setAttribute('class', 'card');  
+
+    // ** magic - handlerbars.js
+    d.innerHTML = card_template(waypoint);
+    frame.appendChild(d);          
+    }
+      makeActionable();
+  });
 

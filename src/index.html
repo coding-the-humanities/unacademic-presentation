@@ -60,55 +60,62 @@
     <!-- this is the handlebars template definition - in index.html for readibility purposes-->
     <script id="card-template-src" type="text/x-handlebars-template">
 
-        <div class="heading">
-            <h1 class="card-category expander">{{category}}</h1>
-             <div class="card-tags expandable"> 
-                <p>humanities, coding, web</p> 
-            </div>
-            <div class="image">    
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/HermannGrid.gif" alt="background" class="bg">
-            </div>            
-        </div>
+        <div class="heading"><img src="{{cardimage}}"></div>
 
-        <div class="card-title expander"> 
-            <h2>{{title}}</h2>
-        </div>
-
-        <div class="desc expandable">
-            <div class="card-description"> 
-                <p>{{description}}</p> 
+        <section class="content">
+            <div class="card-title expander"> 
+                <h2>{{title}}</h2>
             </div>
-            <h3>checkpoints:</h3>
-            {{#each checkpoints}}
-                <div class="short">
-                    <p>{{title}}</p>
+
+            <div class="desc expandable">
+                <div class="card-description"> 
+                    {{description}}
                 </div>
-            {{/each}}
-            <div class="card-curator">Reika Chavers</div>
-        </div>
+                
+                <hr>
+                
+                <h3>checkpoints</h3>
+                    {{#each checkpoints}}
+                <div class="short">
+                        <p>  <input type="checkbox" name="check" value="box" checked> {{title}}</p>
+                </div>
+                {{/each}}
+                
+                <hr>
+                
+                <h3>tags</h3>
+                <p>humanities<br><br> coding<br><br> web</p>
+                
+                <hr>
+                
+                <h3> curator </h3>
+                <div class="card-curator">Reika Chavers</div>
+                
+                <hr>
+            </div>
 
 
-        <div class="summary">
-            <ul>
-                <li>
-                    <div class="learners"> <p> learners 2200</p></div>
-                </li>
-                <li>
-                    <div class="rating"><p> rating 8/10</p></div>
-                </li>
-               
-            </ul>
-        </div>
+            <div class="summary">
+                <ul>
+                    <li>
+                        learners 2200
+                    </li>
+                    <li>
+                        rating 8/10
+                    </li>
+                   
+                </ul>
+            </div>
 
-        <div class="short">
-            <p>{{summary}}</p>
-        </div>
+            <div class="short">
+                <p>{{summary}}</p>
+            </div>
 
-        <div class="card-btn">
-            <button name="learn">learn</button>
-            <button name="curate">curate</button>
-        </div>        
-
+            <div class="card-btn">
+                <button name="learn">learn</button>
+                <button name="curate">curate</button>
+            </div>        
+        </section>
     </script>
 </head>
 <body>
