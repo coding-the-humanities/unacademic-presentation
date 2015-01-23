@@ -94,13 +94,16 @@ body{
 	overflow-x:		hidden;	
 } 
 
+// hide scrollbar
 ::-webkit-scrollbar { 
    display: none; 
 }
 
+// sidebar
+
+
 // card style
 .card{
-	
 	display: 		inline-block;
 	vertical-align: top;
 	white-space: 	normal;
@@ -123,11 +126,16 @@ body{
 // section 
 .content {
 	margin:			23px;	
+	.fa-sort-desc{
+		float:			right;
+		padding:		10px;
+		font-size:		0.6em;
+	}
 }
 
 // card title
 .card-title {
-	display: 		block;
+
 	text-align:		left;
 	min-width: 		60%;
 	max-width:      100%;	
@@ -137,9 +145,10 @@ body{
 	padding-left:	$pad;
 
 	h2{
+
 		text-transform:	lowercase;	
 		font-family: $heading-font;	
-		margin-bottom:	$pad;
+		padding-bottom:	4px;
 	}	
 }
 
@@ -202,6 +211,7 @@ body{
 		line-height:	80%;
 	}
 	.card-description{
+		margin-top:		$pad;
 		font-family:	$rest-font;	
 	}	
 }
