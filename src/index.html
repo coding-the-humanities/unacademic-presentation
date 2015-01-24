@@ -5,17 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
 
-  <link rel="favicon.ico" href="">
 	<title>Unacademic</title>
-	
+
+  <link rel="favicon.ico" href="">
 	<link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
 </head>
+
 <body>
   <div id="container">
 
     <aside id="leftmenu">
+
       <h2>Unacademic_</h2>
 
       <div class="sloganholder">
@@ -36,64 +37,79 @@
         </ul>
       </nav>
 
+      <!-- buttoncontainer does not say anything. use semantic markup... 
+           also use proper casing modeButtons, maybe -->
+
       <div class="buttoncontainer">
+
+        <!-- no Dutch robert-jan!!!!!! -->
+        <!-- semantic markup button.browsing (let alone .modeButtons button.browsing) 
+             is already very specific, no need for any other words -->
+
         <button class="eerstebutton">browsing</button>
         <button class="tweedebutton">learning</button>
         <button class="derdebutton">curating</button>
-
       </div>
+
     </aside>
 
+    <!-- What does ff stand for? use semantic markup -->
     <div id="ffframe">
     </div>
   </div>
 
   <script id="card-template-src" type="text/x-handlebars-template">
 
-    <div class="heading"><img src="{{cardimage}}"></div>
+    <div class="heading">
+      <img src="{{cardimage}}"/>
+    </div>
 
-      <section class="content">
-          <div class="card-title expander"> 
-              <h2>{{title}} <i class="fa dark fa-sort-desc"></i> </h2>
-          </div>
+    <section class="content">
+      <div class="card-title expander"> 
+          <h2>{{title}} <i class="fa dark fa-sort-desc"></i> </h2>
+      </div>
 
-          <div class="desc expandable">
-              <div class="card-description"> 
-                  {{description}}
-              </div>
-              <hr>
-              <h3>checkpoints</h3>
-                  {{#each checkpoints}}
-                    <div class="short">
-                      <p>  <input type="checkbox" name="check" value="box" checked> {{title}}</p>
-                    </div>
-                   {{/each}}
-              <hr>
-              <h3>tags</h3>
-              <p>humanities<br><br> coding<br><br> web</p>
-              <hr>
-              <h3> curator </h3>
-              <div class="card-curator">Reika Chavers</div>
-              <hr>
+      <div class="desc expandable">
+          <div class="card-description"> 
+              {{description}}
           </div>
 
 
-          <div class="summary">
-            <ul>
-              <li>learners 2200</li>
-              <li>rating 8/10</li>
-            </ul>
-          </div>
+          <!-- don't use hr! this is a styling concern i.e. css -->
+          <hr>
+          <h3>checkpoints</h3>
+              {{#each checkpoints}}
+                <div class="short">
+                  <p>  <input type="checkbox" name="check" value="box" checked> {{title}}</p>
+                </div>
+               {{/each}}
+          <hr>
+          <h3>tags</h3>
+          <p>humanities<br><br> coding<br><br> web</p>
+          <hr>
+          <h3> curator </h3>
+          <div class="card-curator">Reika Chavers</div>
+          <hr>
+      </div>
 
-          <div class="short">
-              <p>{{summary}}</p>
-          </div>
 
-          <div class="card-btn">
-            <button name="learn">learn</button>
-            <button name="curate">curate</button>
-          </div>        
-      </section>
+      <div class="summary">
+        <ul>
+          <li>learners 2200</li>
+          <li>rating 8/10</li>
+        </ul>
+      </div>
+
+      <div class="short">
+          <p>{{summary}}</p>
+      </div>
+
+      <div class="card-btn">
+        <button name="learn">learn</button>
+        <button name="curate">curate</button>
+      </div>        
+
+    </section>
   </script>
 
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
