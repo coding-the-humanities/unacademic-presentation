@@ -2,121 +2,104 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
 
-    <link rel="favicon.ico" href="">
+  <link rel="favicon.ico" href="">
 	<title>Unacademic</title>
 	
-
 	<link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-       
-  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-  <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
-  <script type="text/javascript" src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v2.0.0.js"></script>
-
-
-
-    <!-- this is the handlebars template definition - in index.html for readibility purposes-->
-    <script id="card-template-src" type="text/x-handlebars-template">
-
-        <div class="heading"><img src="{{cardimage}}"></div>
-
-        <section class="content">
-            <div class="card-title expander"> 
-                <h2>{{title}} <i class="fa dark fa-sort-desc"></i> </h2>
-            </div>
-
-            <div class="desc expandable">
-                <div class="card-description"> 
-                    {{description}}
-                </div>
-                
-                <hr>
-                
-                <h3>checkpoints</h3>
-                    {{#each checkpoints}}
-                <div class="short">
-                        <p>  <input type="checkbox" name="check" value="box" checked> {{title}}</p>
-                </div>
-                {{/each}}
-                
-                <hr>
-                
-                <h3>tags</h3>
-                <p>humanities<br><br> coding<br><br> web</p>
-                
-                <hr>
-                
-                <h3> curator </h3>
-                <div class="card-curator">Reika Chavers</div>
-                
-                <hr>
-            </div>
-
-
-            <div class="summary">
-                <ul>
-                    <li>
-                        learners 2200
-                    </li>
-                    <li>
-                        rating 8/10
-                    </li>
-                   
-                </ul>
-            </div>
-
-            <div class="short">
-                <p>{{summary}}</p>
-            </div>
-
-            <div class="card-btn">
-                <button name="learn">learn</button>
-                <button name="curate">curate</button>
-            </div>        
-        </section>
-    </script>
 </head>
 <body>
-	
-    <div id="container">
+  <div id="container">
 
-	<aside id="leftmenu">
-        <h2>Unacademic_</h2>
+    <aside id="leftmenu">
+      <h2>Unacademic_</h2>
 
-        <div class="sloganholder">
-            <h2 class="black">learn by </h2>
-        </div>
-        <div class="sloganholder">
-            <h2 class="black">dwelling</h2>
-        </div>
+      <div class="sloganholder">
+        <h2 class="black">learn by </h2>
+      </div>
 
-        <nav>
-            <ul>
-                <li>Welcome to UnAcademic. We understand that learning is personal. Therefore everything in our interface is fully customizable. Including this landing page. Start your journey by sliding the curation button below.</li>
-            </ul>
-        </nav>
+      <div class="sloganholder">
+        <h2 class="black">dwelling</h2>
+      </div>
 
+      <nav>
+        <ul>
+          <li>
+            Welcome to UnAcademic. We understand that learning is personal. 
+            Therefore everything in our interface is fully customizable. Including 
+            this landing page. Start your journey by sliding the curation button below.
+          </li>
+        </ul>
+      </nav>
 
-        <div class="buttoncontainer">
-            <button class="eerstebutton">browsing</button>
-            <button class="tweedebutton">learning</button>
-            <button class="derdebutton">curating</button>
+      <div class="buttoncontainer">
+        <button class="eerstebutton">browsing</button>
+        <button class="tweedebutton">learning</button>
+        <button class="derdebutton">curating</button>
 
-        </div>
-
+      </div>
     </aside>
 
     <div id="ffframe">
-        <aside></aside>
     </div>
+  </div>
 
-    </div>
-    <script src="scripts/template-handlers.js"></script>
+  <script id="card-template-src" type="text/x-handlebars-template">
+
+    <div class="heading"><img src="{{cardimage}}"></div>
+
+      <section class="content">
+          <div class="card-title expander"> 
+              <h2>{{title}} <i class="fa dark fa-sort-desc"></i> </h2>
+          </div>
+
+          <div class="desc expandable">
+              <div class="card-description"> 
+                  {{description}}
+              </div>
+              <hr>
+              <h3>checkpoints</h3>
+                  {{#each checkpoints}}
+                    <div class="short">
+                      <p>  <input type="checkbox" name="check" value="box" checked> {{title}}</p>
+                    </div>
+                   {{/each}}
+              <hr>
+              <h3>tags</h3>
+              <p>humanities<br><br> coding<br><br> web</p>
+              <hr>
+              <h3> curator </h3>
+              <div class="card-curator">Reika Chavers</div>
+              <hr>
+          </div>
+
+
+          <div class="summary">
+            <ul>
+              <li>learners 2200</li>
+              <li>rating 8/10</li>
+            </ul>
+          </div>
+
+          <div class="short">
+              <p>{{summary}}</p>
+          </div>
+
+          <div class="card-btn">
+            <button name="learn">learn</button>
+            <button name="curate">curate</button>
+          </div>        
+      </section>
+  </script>
+
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+  <script type="text/javascript" src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v2.0.0.js"></script>
+  <script src="scripts/template-handlers.js"></script>
 	<script src="scripts/main.js"></script>
 </body>
-
 </html>
