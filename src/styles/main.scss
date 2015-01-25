@@ -1,6 +1,5 @@
 $primary-color: 	 black;
 $secondary-color:  white;
-$tertiary-color: 	 #E74930;
 $unacademicYellow: #E6D01E;
 $unacademicRed:		 #E34B25;
 
@@ -22,17 +21,16 @@ $borderradius: 0;
 @font-face {
  font-family: 'NN';
  font-style: normal;
- font-weight: 900;
+ font-weight: 400;
  src: url('fonts/NN.woff')  format('woff');
 }
 
 @font-face{
   font-family: 'NB';
   font-style: bold;
-  font-weight: 900;
+  font-weight: 700;
   src: url('fonts/NB.woff') format('woff');
 }
-
 
 html { 
   height: 100vh; 
@@ -42,8 +40,9 @@ html {
 body {	
 	background: 	#72c7b3;
 	font-family: 	$rest-font;
+  text-rendering: geometricPrecision;
 	color: 			  $secondary-color;
-	overflow-x:		hidden;	
+	overflow-x:		scroll;	
 } 
 
 h1, h2 {

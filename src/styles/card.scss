@@ -3,7 +3,7 @@
   vertical-align: top;
   white-space: 	normal;
   background: 	$secondary-color;
-  color:			black;
+  color:			$primary-color;
   width: 			400px;
   height: 		auto;
   margin:			20px;
@@ -25,20 +25,27 @@
     max-width: 100%;	
     font-size: 1em;
     background-color: $primary-color;
-    color: white;
+    color: $secondary-color;
     padding-left: $pad;
 
     h2 {
-      text-transform:	lowercase;	
       font-family: $heading-font;	
       padding-bottom:	4px;
 
-      .fa-sort-desc{
+      .fa-sort-desc {
         float:			right;
         padding:		10px;
         font-size:		0.6em;
       }
     }	
+
+    &:hover {
+      background-color: $unacademicRed;
+      
+      h2 {
+        background-color: $unacademicRed;
+      }
+    }
   }
 
   .content {
@@ -60,16 +67,16 @@
       line-height:	80%;
     }
 
-    .description{
+    .description {
       margin-top:		$pad;
       font-family:	$rest-font;	
     }	
   }
 
   .short {
-    @extend .expandable;
+    @extend .content;
 
-    p{
+    p {
       line-height: 	130%;
     }
   }
@@ -90,28 +97,23 @@
   }
 
   .modes {
-    margin-top: 20px;
-    padding-left:	$pad;
-    padding-right: $pad;
-    margin-bottom: $pad;
-    margin-top:		$pad;
+    padding:	0 23px 23px 23px;
 
     button {
       font-family: 	NB;
       display:		block;
       padding: 		0;
-      margin: 		5px;
       color: 			white;
-      background-color: $tertiary-color;
-      box-shadow: 	none;
-      border: 		0 none;
-      border-radius: 	0 ;	
-      width: 			98%; 
+      background-color: $unacademicRed;
+      width: 			100%; 
       height: 		2em;
       margin-top:		6px;
       transition: 	all 0.1s ease 0s;
-      -moz-transition: all 0.1s ease 0s;
-      -webkit-transition: all 0.1s ease 0s;
+
+      &:hover {
+        background-color: $primary-color;
+        color: $secondary-color;
+      }
     }
   }	
 }

@@ -22,10 +22,10 @@
       frame.appendChild(card);          
     });
 
-    makeActionable();
+    makeExpandable();
   };
 
-  function makeActionable() {
+  function makeExpandable() {
     $('.card .content').hide();
     $('.card .title').click( function() {
       $(this).next(".card .content").slideToggle('fast');
