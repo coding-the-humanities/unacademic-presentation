@@ -1,57 +1,65 @@
-// css reset
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+$primary-color: 	 black;
+$secondary-color:  white;
+$tertiary-color: 	 #E74930;
+$unacademicYellow: #E6D01E;
+$unacademicRed:		 #E34B25;
 
-// Includes
+$heading-font: NN;
+$rest-font:		 NN;
+$pad:				   11px;
+
+$borderradius: 0;
 
 @import "normalize";
 @import "bourbon";
 @import "neat";
 @import "bitters/base";
+@import "./aside";
 
-// this is the frame so that the cards are laid out on the horizontal axis
-#ffframe{
+@font-face {
+ font-family: 'NN';
+ font-style: normal;
+ font-weight: 900;
+ src: url('fonts/NN.woff')  format('woff');
+}
+
+@font-face{
+  font-family: 'NB';
+  font-style: bold;
+  font-weight: 900;
+  src: url('fonts/NB.woff') format('woff');
+}
+
+
+
+html { 
+  height: 100vh; 
+  width:100%; 
+}
+
+body {	
+	background: 	#72c7b3;
+	font-family: 	$rest-font;
+	color: 			  $secondary-color;
+	overflow-x:		hidden;	
+} 
+
+h1, h2 {
+	font-family: $heading-font;
+	display: inline-block;
+	background-color: black;
+	color: whitesmoke;
+	font-size: 2em;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+::-webkit-scrollbar { 
+   display: none; 
+}
+
+
+.cards {
   width: auto;
   height: auto;
   margin: 0;
@@ -62,127 +70,9 @@ table {
 	margin-left: 400px;
 }
 
-// Nitty Font
-@font-face {
- font-family: 'NN';
- font-style: normal;
- font-weight: 900;
- src: url('fonts/NN.woff')  format('woff');
- }
-
- @font-face{
-  font-family: 'NB';
-  font-style: bold;
-  font-weight: 900;
-  src: url('fonts/NB.woff') format('woff');
- }
- 
- @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
-
-// global variables
-$primary-color: 	black;
-$secondary-color: 	white;
-$tertiary-color: 	#E74930;
-$unacademicYellow: 	#E6D01E;
-$unacademicRed:		#E34B25;
-
-$heading-font:		NB;
-$rest-font:			NN;
-$pad:				11px;
-
-$borderradius:		0;
-
-
-html { height: 100%; width:100%; }
-body{	
-	background: 	#72c7b3;
-	font-family: 	$rest-font;
-	color: 			$secondary-color;
-	overflow-x:		hidden;	
-} 
-
-// hide scrollbar
-::-webkit-scrollbar { 
-   display: none; 
-}
-
-/* left menu */
-#leftmenu {
-	width: 400px;
-	height: 1000px;
-	background-color: rgb(228, 228, 228);
-	float: left;
-	top: 0;
-	left: 0;
-	position: fixed;
-	padding: 25px 0 0 0;
-}
-h2 {
-	font-family: $heading-font;
-	display: inline-block;
-	background-color: black;
-	color: whitesmoke;
-	font-size: 2em;
-	padding-left: 5px;
-	padding-right: 5px;
-}
-.black {
-	color: $primary-color;
-	background-color: $secondary-color;
-}
-.sloganholder {
-	margin-top: 5px;
-}
-
-/*nav*/
-nav {
-	margin-top: 50px;
-}
-nav ul li {
-	padding-bottom: 5px;
-	padding-left: 20px;
-	width: 300px;
-	color: black;
-}
-
-
-/*tijdelijke buttonzooi, slechte markup duizendmaal sorry */
-.buttoncontainer {
-	width: 300px;
-}
-button {
-	background: black;
-	width: 33%;
-	height: 40px;
-	border-radius: 0;
-	margin-right: -10px;
-	text-align: center;
-	padding-left: 8px;
-	border-right: 1px solid white;
-}
-button:last-child {
-	border-right: none;
-}
-.buttoncontainer {
-	bottom: 10px;
-	margin-left: 50px;
-	position: fixed;
-}
-
-
-.eerstebutton {
-	border-top-left-radius: $borderradius;
-	border-bottom-left-radius: $borderradius;
-	
-}
-.derdebutton {
-	border-top-right-radius: $borderradius;
-	border-bottom-right-radius: $borderradius;
-
-}
 
 // card style
-.card{
+.card {
 	display: 		inline-block;
 	vertical-align: top;
 	white-space: 	normal;
@@ -196,7 +86,7 @@ button:last-child {
 
 
 // constellation image
-.heading{
+.heading {
 	width:	100%;
 	height: 200px;
 	background: $primary-color;

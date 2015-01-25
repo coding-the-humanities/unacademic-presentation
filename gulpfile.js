@@ -22,7 +22,7 @@ gulp.task('vendor', function () {
 });
 
 gulp.task('styles', function () {
-    return gulp.src('src/styles/**/*.scss')
+    return gulp.src('src/styles/main.scss')
         .pipe($.sass({
         	includePaths: require('node-neat').includePaths
         }))

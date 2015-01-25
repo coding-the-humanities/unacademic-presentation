@@ -19,7 +19,7 @@ var waypointRef = new Firebase(fireUrl + "/waypoints");
 var query = waypointRef;
 query.on("value", function(snap) {
     var val = snap.val();
-    var frame = document.getElementById('ffframe');
+    var frame = document.querySelector('.cards');
 
 
    // iterate through the waypoints
