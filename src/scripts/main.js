@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 (function(){
   var fireUrl = "https://popping-fire-9951.firebaseio.com/unacademic";
   var fireRef = new Firebase(fireUrl);
@@ -5,6 +6,14 @@
   var query = waypointRef;
 
   query.on("value", makeCards);
+=======
+function makeActionable() {
+  $('.content .expandable').hide();
+  $('.content .title').click( function() {
+    $(this).next(".content .expandable").slideToggle('fast');
+  });
+} 
+>>>>>>> de29cdafbdafc23a8cdef564d10366533fe8e633
 
   function makeCards(data) {
     var waypoints = data.val();
