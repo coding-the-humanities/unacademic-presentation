@@ -14,7 +14,10 @@ $borderradius: 0;
 @import "bourbon";
 @import "neat";
 @import "bitters/base";
+
 @import "./aside";
+@import "./cards";
+@import "./card";
 
 @font-face {
  font-family: 'NN';
@@ -29,7 +32,6 @@ $borderradius: 0;
   font-weight: 900;
   src: url('fonts/NB.woff') format('woff');
 }
-
 
 
 html { 
@@ -56,139 +58,4 @@ h1, h2 {
 
 ::-webkit-scrollbar { 
    display: none; 
-}
-
-
-.cards {
-  width: auto;
-  height: auto;
-  margin: 0;
-	overflow-x: scroll;
-	overflow-y: scroll;
-	white-space: nowrap;  
-	float: left;
-	margin-left: 400px;
-}
-
-
-// card style
-.card {
-	display: 		inline-block;
-	vertical-align: top;
-	white-space: 	normal;
-	background: 	$secondary-color;
-	color:			black;
-	width: 			400px;
-	height: 		auto;
-	margin:			20px;
-	text-align: 	center;
-}
-
-
-// constellation image
-.heading {
-	width:	100%;
-	height: 200px;
-	background: $primary-color;
-}
-
-// section 
-.content {
-	margin:			23px;	
-	.fa-sort-desc{
-		float:			right;
-		padding:		10px;
-		font-size:		0.6em;
-	}
-}
-
-// card title
-.card-title {
-
-	text-align:		left;
-	min-width: 		60%;
-	max-width:      100%;	
-	font-size: 		1em;
-	background-color:  $primary-color;
-	color:			white;
-	padding-left:	$pad;
-
-	h2{
-
-		text-transform:	lowercase;	
-		font-family: $heading-font;	
-		padding-bottom:	4px;
-	}	
-}
-
-
-// rating summary
-.summary{
-	color: 			#72C7B3;
-	li{	
-		padding-left: 	$pad;
-		background: 	black;
-		text-align:		left;
-		font-size: 		20px;
-		display:		table;
-		margin-top:		$pad;
-		margin-bottom:	$pad;
-		padding-right:	$pad;
-	}
-}
-
-
-// buttons
-.card-btn {
-	margin-top: 20px;
-	button{
-		font-family: 	NB;
-		display:		block;
-	    padding: 		0;
-	    margin: 		5px;
-	    color: 			white;
-	    background-color: $tertiary-color;
-	    box-shadow: 	none;
-	    border: 		0 none;
-	    border-radius: 	0 ;	
-	    width: 			98%; 
-	    height: 		2em;
-	    margin-top:		6px;
-	    transition: 	all 0.1s ease 0s;
-	  	-moz-transition: all 0.1s ease 0s;
-	  	-webkit-transition: all 0.1s ease 0s;
-	  	
-  	}
-  }	
-
-
-// description of constellation
-.desc{
-	text-align:			left;
-	line-height:		130%;
-	h3{
-		font-family:	$heading-font;
-		color:			$secondary-color;
-		background:		$primary-color;
-		display:		table;
-		padding-left:	$pad;
-		padding-right:	$pad;
-		margin-bottom:	$pad;
-		margin-top:		$pad;
-	}
-	p{
-		line-height:	80%;
-	}
-	.card-description{
-		margin-top:		$pad;
-		font-family:	$rest-font;	
-	}	
-}
-
-// short summary on card
-.short{
-	@extend .desc;
-	p{
-		line-height: 	130%;
-	}
 }

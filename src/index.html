@@ -32,15 +32,7 @@
         </ul>
       </nav>
 
-      <!-- buttoncontainer does not say anything. use semantic markup... 
-           also use proper casing modeButtons, maybe -->
-
       <div class="modes">
-
-        <!-- no Dutch robert-jan!!!!!! -->
-        <!-- semantic markup button.browsing (let alone .modeButtons button.browsing) 
-             is already very specific, no need for any other words -->
-
         <button class="browsing">browsing</button>
         <button class="learning">learning</button>
         <button class="curating">curating</button>
@@ -53,12 +45,12 @@
 
   <script id="card-template-src" type="text/x-handlebars-template">
 
-    <div class="heading">
+    <section class="constellation">
       <img src="{{cardimage}}"/>
-    </div>
+    </section>
 
     <section class="content">
-      <div class="card-title expander"> 
+      <div class="title"> 
           <h2>{{title}} <i class="fa dark fa-sort-desc"></i> </h2>
       </div>
 
@@ -69,7 +61,6 @@
 
 
           <!-- don't use hr! this is a styling concern i.e. css -->
-          <hr>
           <h3>checkpoints</h3>
               {{#each checkpoints}}
                 <div class="short">
@@ -96,13 +87,12 @@
       <div class="short">
           <p>{{summary}}</p>
       </div>
-
-      <div class="card-btn">
-        <button name="learn">learn</button>
-        <button name="curate">curate</button>
-      </div>        
-
     </section>
+
+    <div class="modes">
+      <button name="learn">learn</button>
+      <button name="curate">curate</button>
+    </div>        
   </script>
 
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
