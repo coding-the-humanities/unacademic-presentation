@@ -1,53 +1,34 @@
-//note: the following code requires 
-//  1. firebase.js -- 'https://cdn.firebase.com/js/client/1.0.15/firebase.js
-//  2. handlebars.js -- http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v2.0.0.js
-//  3. jquery.js - http://code.jquery.com/jquery-1.11.2.min.js
+(function(){
+  var fireUrl = "https://popping-fire-9951.firebaseio.com/unacademic";
+  var fireRef = new Firebase(fireUrl);
+  var waypointRef = new Firebase(fireUrl + "/waypoints");
+  var query = waypointRef;
 
-function makeActionable() {
-  $('.expandable').hide();
-  $('.expander').click( function() {
-    $(this).next(".expandable").slideToggle('fast');
-  });
-} 
+  query.on("value", makeCards);
 
-// api call (firebase)
-var fireUrl = "https://popping-fire-9951.firebaseio.com/unacademic";
-var fireRef = new Firebase(fireUrl);
-
-// query all the waypoints
-var waypointRef = new Firebase(fireUrl + "/waypoints");
-var query = waypointRef;
-query.on("value", function(snap) {
-    var val = snap.val();
+  function makeCards(data) {
+    var waypoints = data.val();
     var frame = document.querySelector('.cards');
 
+    waypoints.forEach(function(waypoint, index){
+      var cardIndex = (index  % 4) + 1;
+      var card = document.createElement('div');
 
-   // iterate through the waypoints
-  var j = 0;
+      waypoint.cardimage = "../images/Constellations_" + cardIndex + ".png";
+      waypoint.category = waypoint.keywords[0].slice(4); ///hack
 
-  for(var i = 0; i < val.length; i++) {
+      card.setAttribute('class', 'card');  
+      card.innerHTML = card_template(waypoint);
+      frame.appendChild(card);          
+    });
 
-    var waypoint = val[i];           
-    console.log(waypoint);
+    makeActionable();
+  };
 
-    if(j < 4){
-      j++;
-    }
-    else {
-      j = 1;
-    }
-
-    waypoint.cardimage = "../images/Constellations_" + j + ".png";
-    waypoint.category = waypoint.keywords[0].slice(4); ///hack
-
-    // create a new div
-    var d = document.createElement('div');
-    d.setAttribute('class', 'card');  
-
-    // ** magic - handlerbars.js
-    d.innerHTML = card_template(waypoint);
-    frame.appendChild(d);          
-    }
-      makeActionable();
-  });
-
+  function makeActionable() {
+    $('.content .expandable').hide();
+    $('.content .title').click( function() {
+      $(this).next(".content .expandable").slideToggle('fast');
+    });
+  } 
+})();
