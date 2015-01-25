@@ -54,30 +54,30 @@
           <h2>{{title}} <i class="fa dark fa-sort-desc"></i> </h2>
       </div>
 
-      <div class="desc expandable">
-          <div class="card-description"> 
-              {{description}}
-          </div>
+      <div class="expandable">
+        <div class="description"> 
+            {{description}}
+        </div>
 
+        <h3>checkpoints</h3>
+        {{#each checkpoints}}
+        <div class="short">
+          <p><input type="checkbox" name="check" value="box" checked> {{title}}</p>
+        </div>
+        {{/each}}
+        <hr>
 
-          <!-- don't use hr! this is a styling concern i.e. css -->
-          <h3>checkpoints</h3>
-              {{#each checkpoints}}
-                <div class="short">
-                  <p>  <input type="checkbox" name="check" value="box" checked> {{title}}</p>
-                </div>
-               {{/each}}
-          <hr>
-          <h3>tags</h3>
-          <p>humanities<br><br> coding<br><br> web</p>
-          <hr>
-          <h3> curator </h3>
-          <div class="card-curator">Reika Chavers</div>
-          <hr>
+        <h3>tags</h3>
+        <p>humanities<br><br> coding<br><br> web</p>
+        <hr>
+
+        <h3>curator</h3>
+        <div class="card-curator">Reika Chavers</div>
+        <hr>
       </div>
 
 
-      <div class="summary">
+      <div class="metrics">
         <ul>
           <li>learners 2200</li>
           <li>rating 8/10</li>

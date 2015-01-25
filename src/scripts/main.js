@@ -1,12 +1,7 @@
-//note: the following code requires 
-//  1. firebase.js -- 'https://cdn.firebase.com/js/client/1.0.15/firebase.js
-//  2. handlebars.js -- http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v2.0.0.js
-//  3. jquery.js - http://code.jquery.com/jquery-1.11.2.min.js
-
 function makeActionable() {
-  $('.expandable').hide();
-  $('.expander').click( function() {
-    $(this).next(".expandable").slideToggle('fast');
+  $('.content .expandable').hide();
+  $('.content .title').click( function() {
+    $(this).next(".content .expandable").slideToggle('fast');
   });
 } 
 
